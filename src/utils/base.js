@@ -1,7 +1,10 @@
 import { MessageBox } from 'element-ui';
 import { Message } from 'element-ui';
 import store from '../store.js'
-import router from '../router.js'
+import {
+	createRouter
+} from "../router"
+
 import * as math from 'mathjs'
 
 // noinspection JSAnnotator
@@ -23,7 +26,7 @@ export default {
 				store.commit("nextMenuTitle", item.resourceName)
 				item.childMenus.forEach((item1, index1) => {
 					if (item1.id == sid) {
-						router.push({
+						createRouter().push({
 							path: item1.frontPath
 						})
 					}

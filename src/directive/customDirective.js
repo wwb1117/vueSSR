@@ -1,4 +1,7 @@
-import router from '../router'
+import {
+	createRouter
+} from "../router"
+
 // import store from '../store'
 import myBase from '../utils/base'
 const customDirective = {}
@@ -8,7 +11,7 @@ customDirective.install = Vue => {
     //自定义指令 路由后退一步
     Vue.directive('RouterBack', function(el){
         el.onclick = function(){
-            router.go(-1)
+            createRouter().go(-1)
         }
     })
 

@@ -3,7 +3,7 @@ import Promise from 'es6-promise'
 import qs from 'qs'
 import { Message } from 'element-ui';
 import { Loading } from 'element-ui'
-import router from '../router.js'
+
 
 // axios 配置
 let instance = null
@@ -114,10 +114,7 @@ function checkStatus(response) {
                     message: response.data.message,
                     showClose: true,
                     type: 'warning',
-                    duration: 1500,
-                    onClose: function(){
-                        router.push({path:'/login'})
-                    }
+                    duration: 1500
                 })
                 reject(response.data)
             }else{
